@@ -25,19 +25,32 @@ describe 'BoardParser module' do
 	let(:list_of_empty_cells) { [[0,2], [1,3], [3,2], [3,5], [3,7], [5,4], [7,5], [7,8], [8,0], [8,4]] }
 
 	describe '#fileParser' do
-		describe 'takes in a sudoku puzzle in csv format' do
-			it { expect(fileParser(sudoku_puzzle)).to eq(formatted_board) }
-			it { expect(fileParser(sudoku_puzzle).length).to eq(9) }
-			it { expect(fileParser(sudoku_puzzle)[0].length).to eq(9) }
-			it { expect(fileParser(sudoku_puzzle)[0][0]).to be_kind_of(Integer) }
+		context 'with a sudoku puzzle in csv format' do
+			it 'returns a 2d array' do
+				expect(fileParser(sudoku_puzzle)).to eq(formatted_board) 
+			end
+
+			it 'of integers' do
+				expect(fileParser(sudoku_puzzle)[0][0]).to be_kind_of(Integer)
+			end
+
+			it 'with a 9x9 dimension' do
+				expect(fileParser(sudoku_puzzle).length).to eq(9)
+				expect(fileParser(sudoku_puzzle)[0].length).to eq(9)
+			end
 		end
 	end
 
 	describe '#getListOfEmptyCells' do
-		describe 'takes in a sudoku puzzle in 2d array format' do
-			it { expect(getListOfEmptyCells(formatted_board)).to eq(list_of_empty_cells) }
-			it { expect(getListOfEmptyCells(formatted_board).length).to eq(10) }
-			it { expect(getListOfEmptyCells(formatted_board)[0].length).to eq(2) }
+		context 'with in a sudoku puzzle in 2d array format' do
+			it 'returns a 2d array' do 
+				expect(getListOfEmptyCells(formatted_board)).to eq(list_of_empty_cells) 
+			end
+
+			it 'one array per empty cell with 2 coordenates' do
+				expect(getListOfEmptyCells(formatted_board).length).to eq(10)
+				expect(getListOfEmptyCells(formatted_board)[0].length).to eq(2) 
+			end
 		end
 	end
 end
