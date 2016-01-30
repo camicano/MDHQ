@@ -1,5 +1,5 @@
 module BoardParser
-	def fileParser(board)
+	def fileParser (board)
 		board.split("\n").map do |line|
 			line.split(',').map do |cell|
 				
@@ -14,7 +14,7 @@ module BoardParser
 		end	
 	end
 
-	def getListOfEmptyCells(board)
+	def getListOfEmptyCells (board)
 		list_of_empty_cells = []
 		i = 0
 

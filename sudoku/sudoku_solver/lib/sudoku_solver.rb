@@ -1,5 +1,5 @@
 class SudokuSolver
-	# include DigitCheck
+	# include RuleCheck
 	include BoardParser
 
 	def solve
