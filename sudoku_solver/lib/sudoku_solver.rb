@@ -6,7 +6,7 @@ class SudokuSolver
 	include BoardParser
 
 	def initialize(file)
-		@board = fileToBoardParser file
+		@board = convertStringToInteger file
 		@empty_cells = getListOfEmptyCells @board
 	end
 
@@ -36,6 +36,6 @@ class SudokuSolver
 			end
 		end		
 		
-		boardToFileParser @board
+		@board
 	end
 end

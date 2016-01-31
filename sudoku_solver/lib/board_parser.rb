@@ -1,7 +1,7 @@
 module BoardParser
-	def fileToBoardParser (file)
-		file.split("\n").map do |line|
-			line.split(',').map do |cell|
+	def convertStringToInteger (file)
+		file.map do |line|
+			line.map do |cell|
 				
 				if cell == '-'
 					cell_value = 0
@@ -13,12 +13,7 @@ module BoardParser
 			end
 		end	
 	end
-
-	def boardToFileParser (board)
-		board.map! { |line| line.join(",") }
-		board.join("\n")
-	end
-
+	
 	def getListOfEmptyCells (board)
 		list_of_empty_cells = []
 		i = 0

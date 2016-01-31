@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+require 'csv'
+require_relative 'sudoku_solver/lib/sudoku_solver'
+
+puts "Please provide sudoku puzzle"
+puzzle = gets.chomp
+
+solver = SudokuSolver.new CSV.read(puzzle)
+
+CSV.open(puzzle + "_result.csv", "w+") do |file|
+	result = solver.solve 
+
+	result.each do |row|
+		file << row
+	end
+end
