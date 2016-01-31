@@ -1,6 +1,6 @@
 module BoardParser
-	def fileParser (board)
-		board.split("\n").map do |line|
+	def fileToBoardParser (file)
+		file.split("\n").map do |line|
 			line.split(',').map do |cell|
 				
 				if cell == '-'
@@ -14,13 +14,18 @@ module BoardParser
 		end	
 	end
 
+	def boardToFileParser (board)
+		board.map! { |line| line.join(",") }
+		board.join("\n")
+	end
+
 	def getListOfEmptyCells (board)
 		list_of_empty_cells = []
 		i = 0
 
 		while i < board.length
-			j = 0
 			row = board[i]
+			j = 0
 
 			while j < row.length
 				cell = row[j]

@@ -6,7 +6,7 @@ class SudokuSolver
 	include BoardParser
 
 	def initialize(file)
-		@board = fileParser file
+		@board = fileToBoardParser file
 		@empty_cells = getListOfEmptyCells @board
 	end
 
@@ -35,8 +35,7 @@ class SudokuSolver
 				i -= 1
 			end
 		end		
-		solution = @board.map { |row| row.join(",") }
-
-		return solution.join("\n")
+		
+		boardToFileParser @board
 	end
 end
