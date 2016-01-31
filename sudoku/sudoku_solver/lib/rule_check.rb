@@ -36,7 +36,7 @@ module RuleCheck
 	def isValueValid? (board, cell_coordinates, number)
 		square_coordinates = getSquareCoordinates cell_coordinates
 
-		if !existsInColumn?(board, cell_coordinates[0], number) && !existsInSquare?(board, square_coordinates, number) && !existsInColumn?(board, cell_coordinates[1], number)
+		if !existsInColumn?(board, cell_coordinates[1], number) && !existsInSquare?(board, square_coordinates, number) && !existsInRow?(board, cell_coordinates[0], number)
 			return true
 		end
 
@@ -44,6 +44,7 @@ module RuleCheck
 	end
 
 	private
+	
 	def existsInArray? (array, number)
 		array.each do |cell|
 			if cell == number
