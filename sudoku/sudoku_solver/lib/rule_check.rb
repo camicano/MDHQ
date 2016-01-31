@@ -61,7 +61,7 @@ module RuleCheck
 
 		if cell_row <= 2
 			square_row = 0
-		elsif cell_row > 3 && cell_row <= 5
+		elsif cell_row >= 3 && cell_row <= 5
 			square_row = 3 
 		elsif cell_row > 5
 			square_row = 5
@@ -69,7 +69,7 @@ module RuleCheck
 
 		if cell_column <= 2
 			square_column = 0
-		elsif cell_column > 3 && cell_column <= 5
+		elsif cell_column >= 3 && cell_column <= 5
 			square_column = 3
 		elsif cell_column > 5
 			square_column = 5
