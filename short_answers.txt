@@ -1,1 +1,16 @@
-short_answers.txt
+Short answers
+
+1. What does O(n) mean? O(n^2)?
+- Big O notation describes the expected performance of an algorithm in the worst case scenario. In the case of O(n), the expected performance will increase according to the size of the data input (n), in a linear fashion. In the case of O(n^2), the expected performance will increase according to the size of the data input squared. Making an algorithm with O(n^2) much slower than O(n) one.
+
+2. Describe the quick sort algorithm.
+- Quick sort starts by choosing a random element in the data to be sorted as a pivot, and dividing the data into two sections; one for elements with a lower value than the pivot and one for elements larger than the pivot. Once all of the elements are divided up as described, the process repeats for each one of the resulted groups and repeats again for the subsequent groups until all groups have only one element and at that point the data has been sorted.
+
+3. In C, what is a pointer?
+- A pointer is a variable that stores the location in memory of another variable.
+
+4. What is the difference between Stack and Heap memory?
+-Stack is a piece of the RAM that is set aside whenever a function is called. This piece of memory is used for storing local variables and any other data that is used by this function only. After the function finishes executing then the allocated piece of data gets released back to the stack and reused by the next function that is called. Heap is a piece of RAM that is set aside whenever the application starts and can be used across all threads and functions of that application. It is used for shared data such as global variables and new objects.
+
+5. What is the purpose of a garbage collector?
+- The purpose of a garbage collector is to look for resources that have been allocated to the application but are no longer in use and release them so that they can be reused. 
