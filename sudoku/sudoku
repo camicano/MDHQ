@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
+
 require 'csv'
-require_relative 'sudoku_solver/lib/sudoku_solver'
+require_relative 'lib/sudoku_solver'
 
 puts "Please provide sudoku puzzle"
 puzzle = gets.chomp
